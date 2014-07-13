@@ -1,0 +1,120 @@
+/*
+* Originally based on The MailChimp Reset from Fabio Carneiro, MailChimp User Experience Design
+* More info and templates on Github: https://github.com/mailchimp/Email-Blueprints
+* http://www.mailchimp.com & http://www.fabio-carneiro.com
+*/
+
+#outlook a {
+	padding:0;
+}
+
+body {
+	width:100% !important;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%; 
+	margin:0; 
+	padding:0;
+    font-family: @font-family-body;
+}
+
+#background {
+	margin:0; 
+	padding:0; 
+	width:100% !important; 
+	line-height: 100% !important;
+}
+
+img {
+	outline:none; 
+	text-decoration:none; 
+	-ms-interpolation-mode: bicubic;
+}
+
+a {
+
+  color: @link;
+  font-family: @font-family-body;
+
+  img {
+    border:none;
+  }
+
+}
+
+img {
+  display:block;
+}
+
+p {
+  margin: 1em 0;
+  font-family: @font-family-body;
+}
+
+h1 {color: @h1 !important;}
+h2 {color: @h2 !important;}
+h3 {color: @h3 !important;}
+h4 {color: @h4 !important;}
+h5 {color: @h5 !important;}
+h6 {color: @h6 !important;}
+
+h1, h2, h3, h4, h5, h6 {
+
+  font-family: @font-family-heading;
+
+  a {
+    color: @link !important;
+    font-family: @font-family-heading;
+  }
+
+  a:active {
+    color: @active !important;
+  }
+
+  a:visited {
+    color: @visited !important;
+  }
+}
+
+table { 
+	border-collapse:collapse; 
+	mso-table-lspace:0pt; 
+	mso-table-rspace:0pt;
+
+	td {
+      border-collapse: collapse;
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+
+	a[href^="tel"], a[href^="sms"] {
+      text-decoration: none;
+      color: @link;
+      pointer-events: none;
+      cursor: default;
+	}
+
+	.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+      text-decoration: default;
+      color: @link !important;
+      pointer-events: auto;
+      cursor: default;
+	}
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	a[href^="tel"], a[href^="sms"] {
+      text-decoration: none;
+      color: @link;
+      pointer-events: none;
+      cursor: default;
+	}
+
+	.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+      text-decoration: default;
+      color: @link !important;
+      pointer-events: auto;
+      cursor: default;
+	}
+}
