@@ -9,18 +9,18 @@ var gulp        = require('gulp'),
     w3cjs       = require('gulp-w3cjs'),
     patterns    = [{pattern: /(src="images\/)/g, replacement: 'src="'}];
 
-gulp.task('zip', function () {
+gulp.task('build', ['images'], function () {
     return gulp.src('./production/out/*')
             .pipe(zip('out.zip'))
             .pipe(gulp.dest('./production'));
 });
 
-gulp.task('images', function () {
+gulp.task('images', ['html'], function () {
     return gulp.src('.source/images/**/*')
             .pipe(gulp.dest('./production/out'));
 });
 
-gulp.task('html', function () {
+gulp.task('html', ['less'], function () {
     return gulp.src('./source/*.html')
             .pipe(findReplace(patterns))
             .pipe(inline())
@@ -41,5 +41,3 @@ gulp.task('watch', function () {
             .pipe(gulp.dest('./production/css/'));
     });
 });
-
-gulp.task('build', ['less', 'html', 'images', 'zip']);
